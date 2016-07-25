@@ -5,7 +5,7 @@ Simple Highlight Settings For VSCode. Include:
 + string: surround with "", and handled escaping but ignore its correctness.
 + variable: surround with ``, and handled escaping but ignore its correctness.
 + support extensions: mpl,mph.
-+ see "/syntaxes/maple.json" for detaial.
++ see "/syntaxes/maple.json" for detail.
 
 Push this folder to "%VS Code Install Path%\resources\app\extensions" and restart VS Code.
 
@@ -15,6 +15,6 @@ Maple语法高亮的简单设置。包括：
 + 字符串：用""包围，处理了转义字符的情况，但是不检查转义是否有意义。
 + 变量名：用``包围，处理了转义字符的情况，但是不检查转义是否有意义。
 + 支持文件后缀名：mpl,mph。
-+ 其它特性详见代码。
++ 其它特性详见"/syntaxes/maple.json"。
 
 将此文件夹放在 "%VS Code 安装目录%\resources\app\extensions" 下，重启VS Code即可。
