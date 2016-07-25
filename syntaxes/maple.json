@@ -1,0 +1,46 @@
+{
+    "scopeName": "source.maple",
+    "fileTypes": [
+        "mpl","mph"
+    ],
+    "name": "maple",
+    "patterns": [
+        {
+            "match": "\\b(static|for|from|by|to|in|while|do|end|proc|local|global|option|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
+            "name": "keyword.maple"
+        },
+        {
+            "begin": "\\(\\*",
+            "end": "\\*\\)",
+            "name": "comment.block.maple"
+        },
+        {
+            "match": "#.*?\\n",
+            "name": "comment.line.maple"
+        },
+        {
+            "match": "\"(\\\\.|.)*?\"",
+            "name": "string.maple"
+        },
+        {
+            "match": "`(\\\\`|.)*?`",
+            "name": "string.name.maple"
+        },
+        {
+            "match": "\\$(define|include)\\s*",
+            "name": "keyword.preprocessor.maple"
+        },
+        {
+            "match": "\\b(true|false|FAIL|NULL)\\b",
+            "name": "constant.language.maple"
+        },
+        {
+            "match": "\\b(thisproc|procname|thismodule|_passed|_npassed|_rest|_nrest|_params|_nparams|_options|_noptions)\\b",
+            "name": "variable.language.maple"
+        },
+        {
+            "match": "&.*?\\s+",
+            "name": "keyword.oprator.maple"
+        }
+    ]
+}

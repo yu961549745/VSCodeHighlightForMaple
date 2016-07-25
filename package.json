@@ -1,0 +1,20 @@
+{
+    "name":"maple",
+    "version": "0.0.1",
+    "publisher": "yjt",
+    "engines": { "vscode": "*" },
+    "contributes": {
+        "languages": [
+            {
+                "id": "maple",
+                "extensions": [".mpl",".mph"],
+                "configuration": "maple.configuration.json"
+            }
+        ],
+        "grammars": [{
+			"language": "maple",
+			"scopeName": "source.maple",
+			"path": "./syntaxes/maple.json"
+		}]
+    } 
+}
