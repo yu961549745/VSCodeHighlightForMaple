@@ -31,7 +31,7 @@
             "name": "keyword.preprocessor.maple"
         },
         {
-            "match": "\\b(true|false|FAIL|NULL)\\b",
+            "match": "\\b(true|false|FAIL|NULL|undefined)\\b",
             "name": "constant.language.maple"
         },
         {
