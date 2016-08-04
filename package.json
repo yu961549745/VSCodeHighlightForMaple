@@ -16,5 +16,6 @@
 			"scopeName": "source.maple",
 			"path": "./syntaxes/maple.json"
 		}]
-    } 
+    },
+    "icon":"img/maplew.ico" 
 }
