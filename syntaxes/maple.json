@@ -6,7 +6,7 @@
     "name": "maple",
     "patterns": [
         {
-            "match": "\\b(od|fi|static|for|from|by|to|in|while|do|end|proc|local|global|option|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
+            "match": "\\b(@|od|fi|static|for|from|by|to|in|while|do|end|proc|local|global|option|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
             "name": "keyword.maple"
         },
         {
