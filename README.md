@@ -1,4 +1,5 @@
 # Maple support for Visual Studio Code
+
 ## Syntaxes Highlight
 Simple Highlight Settings For VSCode. Include:
 + line comment: #
@@ -7,6 +8,7 @@ Simple Highlight Settings For VSCode. Include:
 + string: surround with "", and handled escaping but ignore its correctness.
 + variable: surround with ``, and handled escaping but ignore its correctness.
 + support extensions: mpl,mph.
+
 ## Snippets
 Simple snippets including:
 + if
