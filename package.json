@@ -2,6 +2,7 @@
     "name":"maple",
     "version": "0.0.1",
     "publisher": "余江涛",
+    "description": "Maple support for Visual Studio Code",
     "engines": { "vscode": "*" },
     "categories": [
 		"Languages",
