@@ -6,7 +6,7 @@
             "\t$2",
             "end if;"
         ],
-        "description":"if"
+        "description":"if then end if"
     },
 	"elif":{
 		"prefix": "elif",
@@ -14,7 +14,7 @@
 			"elif $1 then",
 			"\t$2"
 		],
-		"description": "elif"
+		"description": "elif then"
 	},
     "proc":{
         "prefix":"proc",
@@ -23,7 +23,7 @@
             "\t$2",
             "end proc:"
         ],
-        "description":"proc"
+        "description":"proc end proc"
     },
     "module":{
         "prefix":"module",
@@ -33,7 +33,7 @@
             "\t$2",
             "end module:"
         ],
-        "description":"module"
+        "description":"module option end module"
     },
     "for":{
         "prefix":"for",
@@ -42,7 +42,7 @@
 			"\t$2",
 			"end do;"
 		],
-		"description": "for"
+		"description": "for do end do"
     },
 	"while":{
 		"prefix": "while",
@@ -51,7 +51,7 @@
 			"\t$2",
 			"end do;"
 		],
-		"description": "while"
+		"description": "while do end do"
 	},
 	"do":{
 		"prefix": "do",
@@ -60,7 +60,7 @@
 			"\t$1",
 			"end do;"
 		],
-		"description": "do"
+		"description": "do end do"
 	},
     "use":{
         "prefix": "use",
@@ -68,7 +68,8 @@
             "use $1 in",
             "\t$2",
             "end use;"
-        ]
+        ],
+        "description":"use in end use"
     },
     "try":{
         "prefix": "try",
@@ -81,6 +82,6 @@
             "\t$4",
             "end try;"
         ],
-        "description": "try"
+        "description": "try catch finally end try"
     }
 }
