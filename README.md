@@ -7,7 +7,7 @@ Simple Highlight Settings For VSCode. Include:
 + keywords
 + string: surround with "", and handled escaping but ignore its correctness.
 + variable: surround with ``, and handled escaping but ignore its correctness.
-+ support extensions: mpl,mph.
++ support extensions: mpl.
 
 ## Snippets
 Simple snippets including:

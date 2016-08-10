@@ -1,7 +1,7 @@
 {
     "name":"maple",
     "version": "0.0.1",
-    "publisher": "余江涛",
+    "publisher": "yjt",
     "description": "Maple support for Visual Studio Code",
     "engines": { "vscode": "*" },
     "categories": [
@@ -12,7 +12,7 @@
         "languages": [
             {
                 "id": "maple",
-                "extensions": [".mpl",".mph"],
+                "extensions": [".mpl"],
                 "configuration": "maple.configuration.json"
             }
         ],
@@ -30,5 +30,10 @@
             }
         ]
     },
-    "icon":"img/maple.png" 
+    "icon":"img/maple.png",
+    "license": "SEE LICENSE IN <LICENSE>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yu961549745/VSCodeHighlightForMaple.git"
+    }
 }

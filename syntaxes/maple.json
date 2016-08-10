@@ -1,7 +1,7 @@
 {
     "scopeName": "source.maple",
     "fileTypes": [
-        "mpl","mph"
+        "mpl"
     ],
     "name": "maple",
     "patterns": [
