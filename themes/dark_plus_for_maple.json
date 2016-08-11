@@ -26,7 +26,7 @@
 				"string.unevaled.maple"
 			],
 			"settings":{
-				"foreground": "#db2e8e"
+				"foreground": "#d0d00f"
 			}
 		},
 		{
@@ -36,7 +36,16 @@
 				"variable.language.maple"
 			],
 			"settings":{
-				"foreground": "#AAAAFF"
+				"foreground": "#aaaaff"
+			}
+		},
+		{
+			"name":"Maple preprocessor",
+			"scope":[
+				"keyword.preprocessor.maple"
+			],
+			"settings":{
+				"foreground":"#ee5aa5"
 			}
 		}
 	]

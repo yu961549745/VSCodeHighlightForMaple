@@ -1,0 +1,7 @@
+.foo{
+    color:#ff80ff;/* modifier */
+    color:#ff8000;/* quoted name */
+    color:#d0d00f;/* unevaluated expression */
+    color:#aaaaff;/* language variable and constant */
+    color:#ee5aa5;/* preprocessor */
+}
