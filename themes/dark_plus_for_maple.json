@@ -1,0 +1,43 @@
+{
+	"name": "Dark+ for maple",
+	"include": "./dark_plus.json",
+	"settings": [
+		{
+			"name": "Maple modifiers",
+			"scope":[
+				"storage.modifier.maple"
+			],
+			"settings":{
+				"foreground": "#ff80ff"
+			}
+		},
+		{
+			"name": "Maple quoted name",
+			"scope":[
+				"string.name.maple"
+			],
+			"settings":{
+				"foreground": "#ff8000"
+			}
+		},
+		{
+			"name":"Maple uneval expression",
+			"scope":[
+				"string.unevaled.maple"
+			],
+			"settings":{
+				"foreground": "#db2e8e"
+			}
+		},
+		{
+			"name":"Maple variables and constants",
+			"scope":[
+				"constant.language.maple",
+				"variable.language.maple"
+			],
+			"settings":{
+				"foreground": "#AAAAFF"
+			}
+		}
+	]
+}

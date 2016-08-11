@@ -1,18 +1,28 @@
 # Maple support for Visual Studio Code
 
-## Syntaxes Highlight
-Simple Highlight Settings For VSCode. Include:
-+ line comment: #
-+ block comment: (**)
+## Syntaxes Highlight & Theme
+The highlight theme `Dark+ for maple` is based on the vscode default `Drak+` theme, added some color settings for the maple elements.
+
+<img src="./img/theme.png">
+
+Support elements include:
++ line comment: `#`
++ block comment: `(**)`
 + keywords
-+ string: surround with "", and handled escaping but ignore its correctness.
-+ variable: surround with ``, and handled escaping but ignore its correctness.
++ string: surround with `""`, and handled escaping but ignore its correctness.
++ quoted names: surround with ` `` `, and handled escaping but ignore its correctness.
++ unevaluated expressions: the `''` can be used as `()` for expressions, so it's diffiicult to match these expressions,
+    this extension just support mult-quoted unevaluated expressions such as `'x'` and `''x''`, expressions like `''x'+y'` can not be highlighted correctly.
 + support extensions: mpl.
 
 ## Snippets
+
+<img src="./img/snippets.gif">
+
 Simple snippets including:
 + if
 + elif
++ else
 + proc
 + module
 + for

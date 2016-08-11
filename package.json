@@ -1,12 +1,13 @@
 {
     "name":"maple",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "yjt",
     "description": "Maple support for Visual Studio Code",
     "engines": { "vscode": "*" },
     "categories": [
 		"Languages",
-		"Snippets"
+		"Snippets",
+        "Themes"
 	],
     "contributes": {
         "languages": [
@@ -28,12 +29,27 @@
                 "language": "maple",
                 "path": "./snippets/maple.json"
             }
+        ],
+        "themes": [
+            {
+                "label": "Dark+ for maple",
+                "uiTheme": "vs-dark",
+                "path": "./themes/dark_plus_for_maple.json"
+            }
         ]
     },
     "icon":"img/maple.png",
-    "license": "SEE LICENSE IN <LICENSE>",
+    "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
         "url": "https://github.com/yu961549745/VSCodeHighlightForMaple.git"
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/yu961549745/VSCodeHighlightForMaple/issues",
+        "email": "yjt7777777@gmail.com"
+    },
+    "homepage": "https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/README.md",
+    "keywords": [
+        "maple"
+    ]
 }

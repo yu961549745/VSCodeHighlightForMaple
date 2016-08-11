@@ -6,8 +6,20 @@
     "name": "maple",
     "patterns": [
         {
-            "match": "\\b(@|od|fi|static|for|from|by|to|in|while|do|end|proc|local|global|option|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
+            "match": "@|\\b(od|fi|for|from|by|to|in|while|do|end|proc|local|global|option|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
             "name": "keyword.maple"
+        },
+        {
+            "match": "\\$(define|include)\\s*",
+            "name": "keyword.preprocessor.maple"
+        },
+        {
+            "match": "&.*?\\s+",
+            "name": "keyword.oprator.maple"
+        },
+        {
+            "match":"(\\b(static)\\b)|((?<=::)\\s*(seq|depends|uneval|evaln|coerce))",
+            "name":"storage.modifier.maple"
         },
         {
             "begin": "\\(\\*",
@@ -27,8 +39,8 @@
             "name": "string.name.maple"
         },
         {
-            "match": "\\$(define|include)\\s*",
-            "name": "keyword.preprocessor.maple"
+            "match": "('+).*?\\1",
+            "name": "string.unevaled.maple"
         },
         {
             "match": "\\b(true|false|FAIL|NULL|undefined)\\b",
@@ -39,8 +51,8 @@
             "name": "variable.language.maple"
         },
         {
-            "match": "&.*?\\s+",
-            "name": "keyword.oprator.maple"
+            "match":"\\b(abstract_rootof|ac_var|algebraic|AlgebraicObject|algext|algfun|algnum|algnumext|And|anticommutative|anyfunc|anyindex|anything|appliable|applied|arctrig|arctrigh|arithop|array|Array|assignable|atomic|attributed|boolean|BooleanOpt|builtin|ByteArray|cache|character|ClosedIdeal|CommAlgebra|commutative|complex|complexcons|composition|const|constant|copyrighted|cubic|cx_infinity|cx_zero|dependent|dictionary|dimension|disjcyc|double|embedded_axis|embedded_imaginary|embedded_real|equation|even|evenfunc|evenodd|expanded|extended_numeric|extended_rational|facint|factorial|filedesc|filename|finite|float|form|fraction|freeof|function|global|hfarray|hfloat|identical|imaginary|implies|indexable|indexed|indexedfun|infinity|integer|intersect|last_name_eval|laurent|linear|list|listlist|literal|local|logical|mathfunc|Matrix|matrix|MatrixPolynomialObject|module|moduledefinition|monomial|MonomialOrder|MVIndex|name|nc_var|neg_infinity|negative|negint|negzero|nested|Non|noncommutative|nonemptylist|nonemptyset|nonnegative|nonnegint|nonposint|nonpositive|nonreal|Not|nothing|numeric|odd|oddfunc|operator|Or|OreAlgebra|package|partition|patfunc|patindex|patlist|permlist|piecewise|point|Point|polynom|PolynomialIdeal|pos_infinity|posint|positive|posneg|poszero|prime|procedure|property|protected|quadratic|quartic|Queue|radalgfun|radalgnum|radext|radfun|radfunext|radical|radnum|radnumext|range|Range|rational|ratpoly|ratseq|real_infinity|realcons|record|relation|RootOf|rtable|satisfies|scalar|SDMPolynom|sequential|series|SERIES|set|sfloat|ShortMonomialOrder|ShortTermOrder|SkewAlgebra|SkewParamAlgebra|SkewPolynomial|specfunc|specified_rootof|specindex|Stack|stack|std|stdlib|string|structure|subset|suffixed|surface|symbol|SymbolicInfinity|symmfunc|table|tabular|taylor|Temperature|TEXT|trig|trigh|truefalse|truefalseFAIL|typefunc|typeindex|undefined|uneval|unit|unit_name|Vector|vector|verification|verify|with_unit|zppoly)\\b",
+            "name":"support.type.maple"
         }
     ]
 }

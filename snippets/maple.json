@@ -2,20 +2,28 @@
  	"if":{
         "prefix":"if",
         "body":[
-            "if $1 then",
-            "\t$2",
+            "if ${1} then",
+            "\t${2}",
             "end if;"
         ],
-        "description":"if then end if"
+        "description":"if  then  end if"
     },
 	"elif":{
 		"prefix": "elif",
 		"body": [
-			"elif $1 then",
-			"\t$2"
+			"elif ${1} then",
+			"\t${2}"
 		],
-		"description": "elif then"
+		"description": "elif  then"
 	},
+    "else":{
+        "prefix":"else",
+        "body":[
+            "else",
+            "\t${1}"
+        ],
+        "description":"else"
+    },
     "proc":{
         "prefix":"proc",
         "body":[
