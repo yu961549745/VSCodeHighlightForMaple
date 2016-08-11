@@ -13,7 +13,8 @@ Support elements include:
 + quoted names: surround with ` `` `, and handled escaping but ignore its correctness.
 + unevaluated expressions: the `''` can be used as `()` for expressions, so it's diffiicult to match these expressions,
     this extension just support mult-quoted unevaluated expressions such as `'x'` and `''x''`, expressions like `''x'+y'` can not be highlighted correctly.
-+ support extensions: mpl.
++ preprocessor: such as `$include`. *Notice*: In Maple, the introducer `$` must appear as the first character of a line to be recognized as a preprocessor directive.
++ support extensions: mpl,mm,mi .
 
 ## Snippets
 

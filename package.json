@@ -1,6 +1,6 @@
 {
     "name":"maple",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "yjt",
     "description": "Maple support for Visual Studio Code",
     "engines": { "vscode": "*" },
@@ -13,7 +13,7 @@
         "languages": [
             {
                 "id": "maple",
-                "extensions": [".mpl"],
+                "extensions": [".mpl",".mi",".mm"],
                 "configuration": "maple.configuration.json"
             }
         ],

@@ -1,7 +1,7 @@
 {
     "scopeName": "source.maple",
     "fileTypes": [
-        "mpl"
+        "mpl","mi","mm"
     ],
     "name": "maple",
     "patterns": [
@@ -10,7 +10,7 @@
             "name": "keyword.maple"
         },
         {
-            "match": "\\$(define|include)\\s*",
+            "match": "\\$(define|include|undef|ifdef|ifndef|else|elif|endif)\\b",
             "name": "keyword.preprocessor.maple"
         },
         {
