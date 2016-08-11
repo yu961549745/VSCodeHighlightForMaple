@@ -3,7 +3,7 @@
 ## Syntaxes Highlight & Theme
 The highlight theme `Dark+ for maple` is based on the vscode default `Drak+` theme, added some color settings for the maple elements.
 
-<img src="./img/theme.png">
+<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/theme.png?raw=true">
 
 Support elements include:
 + line comment: `#`
@@ -17,7 +17,7 @@ Support elements include:
 
 ## Snippets
 
-<img src="./img/snippets.gif">
+<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/snippets.gif?raw=true">
 
 Simple snippets including:
 + if
