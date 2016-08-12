@@ -34,7 +34,7 @@
             {
                 "label": "Dark+ for maple",
                 "uiTheme": "vs-dark",
-                "path": "./themes/dark_plus_for_maple.json"
+                "path": "./themes/maple.json"
             }
         ]
     },

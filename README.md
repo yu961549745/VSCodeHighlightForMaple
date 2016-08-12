@@ -1,7 +1,9 @@
 # Maple support for Visual Studio Code
 
 ## Syntaxes Highlight & Theme
-The highlight theme `Dark+ for maple` is based on the vscode default `Drak+` theme, added some color settings for the maple elements.
+The highlight theme `Dark+ for maple` is based on the vscode default `Dark+` theme, added some color settings for the maple elements.
+
+If you don't like the color, you can change it in `./themes/maple.json`.
 
 <img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/theme.png?raw=true">
 
@@ -11,7 +13,7 @@ Support elements include:
 + keywords
 + string: surround with `""`, and handled escaping but ignore its correctness.
 + quoted names: surround with ` `` `, and handled escaping but ignore its correctness.
-+ unevaluated expressions: the `''` can be used as `()` for expressions, so it's diffiicult to match these expressions,
++ unevaluated expressions: the `''` can be used as `()` for expressions, so it's difficult to match these expressions,
     this extension just support mult-quoted unevaluated expressions such as `'x'` and `''x''`, expressions like `''x'+y'` can not be highlighted correctly.
 + preprocessor: such as `$include`. *Notice*: In Maple, the introducer `$` must appear as the first character of a line to be recognized as a preprocessor directive.
 + support extensions: mpl,mm,mi .
