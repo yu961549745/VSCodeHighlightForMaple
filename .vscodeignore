@@ -2,3 +2,4 @@ test/**
 img/snippets.gif
 img/theme.png
 .vscode/**
+publish.bat
