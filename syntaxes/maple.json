@@ -47,7 +47,7 @@
             "name": "constant.language.maple"
         },
         {
-            "match": "\\b(thisproc|procname|thismodule|_passed|_npassed|_rest|_nrest|_params|_nparams|_options|_noptions)\\b",
+            "match": "\\b(thisproc|procname|thismodule|_passed|_npassed|_rest|_nrest|_params|_nparams|_options|_noptions|args|nargs)\\b",
             "name": "variable.language.maple"
         },
         {

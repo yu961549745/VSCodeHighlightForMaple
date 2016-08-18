@@ -3,6 +3,8 @@
 ## Syntaxes Highlight & Theme
 The highlight theme `Dark+ for maple` is based on the vscode default `Dark+` theme, added some color settings for the maple elements.
 
+To change the theme, you can press `ctrl+shift+P` and search `Theme`, click `Preference: Color Theme`, and select the `Dark+ for maple`.
+
 If you don't like the color, you can change it in `./themes/maple.json`.
 
 <img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/theme.png?raw=true">
