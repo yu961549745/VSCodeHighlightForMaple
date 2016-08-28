@@ -9,7 +9,9 @@
     "Syntaxes",
     "json",
     "mpl",
-    "proc"
+    "proc",
+    "ifndef",
+    "endif"
   ],
   "mistakeTypeToStatus": {
     "Passive voice": "Hint",

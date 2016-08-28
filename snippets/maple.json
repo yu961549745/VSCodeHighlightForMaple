@@ -91,5 +91,14 @@
             "end try;"
         ],
         "description": "try catch finally end try"
+    },
+    "define":{
+        "prefix":"$ifndef",
+        "body":[
+            "$ifndef $1",
+            "$define $1",
+            "$endif"
+        ],
+        "description":"ifndef - define - endif"
     }
 }
