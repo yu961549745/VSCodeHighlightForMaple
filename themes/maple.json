@@ -33,7 +33,8 @@
 			"name":"Maple variables and constants",
 			"scope":[
 				"constant.language.maple",
-				"variable.language.maple"
+				"variable.language.maple",
+				"variable.options.maple"
 			],
 			"settings":{
 				"foreground": "#aaaaff"

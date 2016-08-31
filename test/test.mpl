@@ -10,6 +10,7 @@ print("123");           # string
 print('x+y');           # unvaluated expression
 type(x,uneval);         # type name
 fun:=proc(x::uneval)    # parameter modifier
+    option inline;      # proc and module options
     print(procname);    # language variable
     return true;        # language constants
 end proc:
