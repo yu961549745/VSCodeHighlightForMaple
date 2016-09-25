@@ -18,14 +18,22 @@ var outputChannel = vscode.window.createOutputChannel('Maple');
 var tmpFilePath = require('os').tmpdir();
 
 function getSelectedCodeAndRun() {
-    var config = vscode.workspace.getConfiguration('maple');
-    var cmaplePath = config.get("cmaplePath");
-    var printOption = config.get("isPrettyPrint") ? "" : " -c interface(prettyprint=0) ";
+    // check editor is openning
     var editor = vscode.window.activeTextEditor;
     if (!editor) {
         vscode.window.showInformationMessage('No code found or selected.');
         return;
     }
+    // get configs
+    var config = vscode.workspace.getConfiguration('maple');
+    var cmaplePath = config.get("cmaplePath");
+    var printOption = config.get("isPrettyPrint") ? "" : " -c interface(prettyprint=0) ";
+    // check cmaple.exe is exists
+    if (!fs.existsSync(cmaplePath)) {
+        vscode.window.showInformationMessage('Please set path of cmaple.exe');
+        return;
+    }
+    // run maple codes
     var selection = editor.selection;
     var text = selection.isEmpty ? editor.document.getText() : editor.document.getText(selection);
     var tmpFile = path.join(tmpFilePath, 'tmp0000.mpl'.replace(/\d+/g, Math.random().toString()));
