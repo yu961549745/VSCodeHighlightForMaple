@@ -5,6 +5,7 @@
     return x union y;
 end proc:               # keywords
 $include "utils.mpl"    # preprocessor
+solve(x^2+x-1);         # maple functions
 print(`&+`);            # quoted name
 print("123");           # string
 print('x+y');           # unvaluated expression

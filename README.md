@@ -19,6 +19,7 @@ Support elements include:
     this extension just support mult-quoted unevaluated expressions such as `'x'` and `''x''`, expressions like `''x'+y'` can not be highlighted correctly.
 + preprocessor: such as `$include`. *Notice*: In Maple, the introducer `$` must appear as the first character of a line to be recognized as a preprocessor directive.
 + proc and module options. But deleted `trace` option, because it is rarely used, and can be instead of the `trace` function. 
++ maple functions.
 + support extensions: mpl,mm,mi .
 
 ## Snippets
