@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": { "vscode": "^1.5.0" },

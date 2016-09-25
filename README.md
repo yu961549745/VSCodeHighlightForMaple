@@ -47,7 +47,7 @@ Firstly, you should set the path of `cmaple.exe`.
 ```
 "maple.cmaplePath":"${Maple Install Path}/bin/cmaple.exe"
 ```
-And you can set the output option `maple.isPrettyPrint` to be `true` or `false` (default is false). Need to resart the vscode to make effect.
+And you can set the output option `maple.isPrettyPrint` to be `true` or `false` (default is false).
 ```
 "maple.isPrettyPrint":true or false
 ```

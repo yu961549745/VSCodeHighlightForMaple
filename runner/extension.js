@@ -17,13 +17,10 @@ var exec = require('child_process').exec;
 var outputChannel = vscode.window.createOutputChannel('Maple');
 var tmpFilePath = require('os').tmpdir();
 
-var config = vscode.workspace.getConfiguration('maple');
-var cmaplePath = config.get("cmaplePath");
-var isPrettyPrint = config.get("isPrettyPrint");
-
-var printOption = isPrettyPrint ? "" : " -c interface(prettyprint=0) ";
-
 function getSelectedCodeAndRun() {
+    var config = vscode.workspace.getConfiguration('maple');
+    var cmaplePath = config.get("cmaplePath");
+    var printOption = config.get("isPrettyPrint") ? "" : " -c interface(prettyprint=0) ";
     var editor = vscode.window.activeTextEditor;
     if (!editor) {
         vscode.window.showInformationMessage('No code found or selected.');
