@@ -39,12 +39,14 @@ Simple snippets including:
 + ifndef - define - endif
 
 ## Maple Code Runner
-<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/runner.gif?raw=true">
+
+<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/runner.png?raw=true">
+
 Firstly, you should set the path of `cmaple.exe`.
 ```
 "maple.cmaplePath":"${Maple Install Path}/bin/cmaple.exe"
 ```
-And you can set the output option `maple.isPrettyPrint` to be `true` or `false`. Need to resart the vscode to make effect.
+And you can set the output option `maple.isPrettyPrint` to be `true` or `false` (default is false). Need to resart the vscode to make effect.
 ```
 "maple.isPrettyPrint":true or false
 ```
