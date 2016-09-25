@@ -36,8 +36,9 @@ function getSelectedCodeAndRun() {
     // run maple codes
     var selection = editor.selection;
     var text = selection.isEmpty ? editor.document.getText() : editor.document.getText(selection);
-    var tmpFile = path.join(tmpFilePath, 'tmp0000.mpl'.replace(/\d+/g, Math.random().toString()));
-    var outFile = path.join(tmpFilePath, 'out0000.txt'.replace(/\d+/g, Math.random().toString()));
+    var rndStr = Math.random().toString();
+    var tmpFile = path.join(tmpFilePath, 'tmp0.mpl'.replace(/\d+/g, rndStr));
+    var outFile = path.join(tmpFilePath, 'out0.mpl'.replace(/\d+/g, rndStr));
     fs.writeFileSync(tmpFile, text, { encoding: "utf8" });
     var process = exec('"' + cmaplePath + '"' + " " + printOption + '"' + tmpFile + '"' + " >" + '"' + outFile + '"');
     process.on('close', function() {
