@@ -1,44 +1,71 @@
 {
-    "name":"maple",
-    "version": "0.1.8",
+    "name": "maple",
+    "version": "1.0.0",
     "publisher": "yjt",
-    "description": "Maple support for Visual Studio Code",
-    "engines": { "vscode": "*" },
+    "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
+    "engines": { "vscode": "^1.5.0" },
     "categories": [
-		"Languages",
-		"Snippets",
-        "Themes"
-	],
+        "Languages",
+        "Snippets",
+        "Themes",
+        "Other"
+    ],
     "contributes": {
-        "languages": [
-            {
-                "id": "maple",
-                "extensions": [".mpl",".mi",".mm"],
-                "configuration": "maple.configuration.json"
+        "languages": [{
+            "id": "maple",
+            "extensions": [".mpl", ".mi", ".mm"],
+            "configuration": "maple.configuration.json"
+        }],
+        "grammars": [{
+            "language": "maple",
+            "scopeName": "source.maple",
+            "path": "./syntaxes/maple.json"
+        }],
+        "snippets": [{
+            "language": "maple",
+            "path": "./snippets/maple.json"
+        }],
+        "themes": [{
+            "label": "Dark+ for maple",
+            "uiTheme": "vs-dark",
+            "path": "./themes/maple.json"
+        }],
+        "commands": [{
+            "command": "maple.run",
+            "title": "Maple Runner"
+        }],
+        "keybindings": [{
+            "command": "maple.run",
+            "key": "ctrl+shift+alt+m"
+        }],
+        "menus": {
+            "editor/context": [{
+                "command": "maple.run",
+                "group": "navigation"
+            }]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Maple Runner configuration",
+            "properties": {
+                "maple.cmaplePath": {
+                    "type": "string",
+                    "default": "D:/Maple 2016/bin.X86_64_WINDOWS/cmaple.exe",
+                    "description": "Set path of cmaple.exe"
+                },
+                "maple.isPrettyPrint": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Set maple output format is pretty or not"
+                }
             }
-        ],
-        "grammars": [
-            {
-                "language": "maple",
-                "scopeName": "source.maple",
-                "path": "./syntaxes/maple.json"
-	    	}
-        ],
-        "snippets": [
-            {
-                "language": "maple",
-                "path": "./snippets/maple.json"
-            }
-        ],
-        "themes": [
-            {
-                "label": "Dark+ for maple",
-                "uiTheme": "vs-dark",
-                "path": "./themes/maple.json"
-            }
-        ]
+        }
     },
-    "icon":"img/maple.png",
+    "activationEvents": [
+        "onCommand:maple.run"
+    ],
+    "main": "./runner/extension",
+    "icon": "img/maple.png",
     "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
@@ -50,6 +77,6 @@
     },
     "homepage": "https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/README.md",
     "keywords": [
-        "maple"
+        "maple","highlight","snippets","run"
     ]
 }

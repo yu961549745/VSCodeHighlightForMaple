@@ -37,3 +37,35 @@ Simple snippets including:
 + use
 + try
 + ifndef - define - endif
+
+## Maple Code Runner
+<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/runner.gif?raw=true">
+Firstly, you should set the path of `cmaple.exe`.
+```
+"maple.cmaplePath":"${Maple Install Path}/bin/cmaple.exe"
+```
+And you can set the output option `maple.isPrettyPrint` to be `true` or `false`. Need to resart the vscode to make effect.
+```
+"maple.isPrettyPrint":true or false
+```
+Example for `true`
+```
+> solve(x^2+x-1);
+                                                1/2                 1/2
+                                               5                   5
+                                               ---- - 1/2, - 1/2 - ----
+                                                2                   2
+```
+Example for `false`
+```
+> solve(x^2+x-1);
+1/2*5^(1/2)-1/2, -1/2-1/2*5^(1/2)
+```
+To run maple code, you can right click and select the `Maple Runner` menu. Or, you can press `ctrl+shift+alt+m`. 
+While there is any code is selected, it will run the selected code instead of run the whole file.
+
+Notice:
++ it only support codes that can run in `cmaple.exe`.
++ ervery line should end with `;` or `:`.
++ not support preprocessor commands.
+
