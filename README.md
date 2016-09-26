@@ -54,10 +54,10 @@ And you can set the output option `maple.isPrettyPrint` to be `true` or `false` 
 Example for `true`
 ```
 > solve(x^2+x-1);
-                                                1/2                 1/2
-                                               5                   5
-                                               ---- - 1/2, - 1/2 - ----
-                                                2                   2
+                   1/2                 1/2
+                  5                   5
+                  ---- - 1/2, - 1/2 - ----
+                   2                   2
 ```
 Example for `false`
 ```
