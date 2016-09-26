@@ -69,6 +69,6 @@ While there is any code is selected, it will run the selected code instead of ru
 
 Notice:
 + it only support codes that can run in `cmaple.exe`.
-+ ervery line should end with `;` or `:`.
++ every line should end with `;` or `:`.
 + not support preprocessor commands.
 
