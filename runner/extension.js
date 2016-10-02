@@ -52,7 +52,9 @@ function getSelectedCodeAndRun() {
         var output = fs.readFileSync(outFile, "utf8");
         var lines = output.split(/[\r\n]+/g);
         for (var i = 5; i < lines.length - 3; i++) {
-            outputChannel.appendLine(lines[i]);
+            if (!lines[i].match(/memory used=.*?MB, alloc=.*?MB, time=.*?/)) {
+                outputChannel.appendLine(lines[i]);
+            }
         }
         fs.unlinkSync(tmpFile);
         fs.unlinkSync(outFile);
