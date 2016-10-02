@@ -31,6 +31,8 @@ function getSelectedCodeAndRun() {
     var config = vscode.workspace.getConfiguration('maple');
     var cmaplePath = config.get("cmaplePath");
     var printOption = config.get("isPrettyPrint") ? " -c interface(prettyprint=1) " : " -c interface(prettyprint=0) ";
+    var dirOption = " -c \"currentdir(`" + fpath + "`)\" ";
+    var options = dirOption + printOption;
     // check cmaple.exe is exists
     if (!fs.existsSync(cmaplePath)) {
         vscode.window.showInformationMessage('Please set path of cmaple.exe');
@@ -39,18 +41,17 @@ function getSelectedCodeAndRun() {
     // run maple codes
     var selection = editor.selection;
     var text = selection.isEmpty ? editor.document.getText() : editor.document.getText(selection);
-    text = "currentdir(\"" + fpath + "\");\r\n" + text;
     var rndStr = Math.random().toString();
     var tmpFile = path.join(tmpFilePath, 'tmp0.mpl'.replace(/\d+/g, rndStr));
     var outFile = path.join(tmpFilePath, 'out0.mpl'.replace(/\d+/g, rndStr));
     fs.writeFileSync(tmpFile, text, { encoding: "utf8" });
-    var process = exec('"' + cmaplePath + '"' + " " + printOption + '"' + tmpFile + '"' + " >" + '"' + outFile + '"');
+    var process = exec('"' + cmaplePath + '"' + " " + options + '"' + tmpFile + '"' + " >" + '"' + outFile + '"');
     process.on('close', function() {
         outputChannel.show();
         outputChannel.appendLine('[Maple Running : ' + fname + ']');
         var output = fs.readFileSync(outFile, "utf8");
         var lines = output.split(/[\r\n]+/g);
-        for (var i = 7; i < lines.length - 3; i++) {
+        for (var i = 5; i < lines.length - 3; i++) {
             outputChannel.appendLine(lines[i]);
         }
         fs.unlinkSync(tmpFile);

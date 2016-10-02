@@ -15,7 +15,10 @@
     "isPrettyPrint",
     "cmaple",
     "mpl",
-    "proc"
+    "proc",
+    "x x",
+    "syntaxes",
+    "syntaxe"
   ],
   "mistakeTypeToStatus": {
     "Passive voice": "Hint",

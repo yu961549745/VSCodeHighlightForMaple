@@ -72,3 +72,13 @@ Notice:
 + every line should end with `;` or `:`.
 + not support preprocessor commands.
 
+## Change Log
+### 1.1.0
++ set the running path of `cmaple` to the folder of selected file.
++ add hint while running maple code.
+### 1.0.x
++ add code runner.
+### 0.x.x
++ add syntaxes highlight.
++ add snippets.
++ add theme.
