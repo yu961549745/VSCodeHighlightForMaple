@@ -1,6 +1,5 @@
 test/**
-img/snippets.gif
-img/theme.png
-img/runner.png
+img/**
+!img/maple.png
 .vscode/**
 publish.bat
