@@ -41,7 +41,7 @@ Simple snippets including:
 
 ## Maple Code Runner
 
-<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/runner.png?raw=true">
+<img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/runner.gif?raw=true">
 
 Firstly, you should set the path of `cmaple.exe`.
 ```
@@ -65,7 +65,7 @@ Example for `false`
 1/2*5^(1/2)-1/2, -1/2-1/2*5^(1/2)
 ```
 To run maple code, you can right click and select the `Maple Runner` menu. Or, you can press `ctrl+shift+alt+m`. 
-While there is any code is selected, it will run the selected code instead of run the whole file.
+While there is any code selected, it will run the selected code instead of run the whole file.
 
 Notice:
 + it only support codes that can run in `cmaple.exe`.
@@ -73,11 +73,14 @@ Notice:
 + not support preprocessor commands.
 
 ## Change Log
-### 1.1.0
+
+### 1.1.x
 + set the running path of `cmaple` to the folder of selected file.
 + add hint while running maple code.
+
 ### 1.0.x
 + add code runner.
+
 ### 0.x.x
 + add syntaxes highlight.
 + add snippets.
