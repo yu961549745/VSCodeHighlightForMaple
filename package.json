@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": { "vscode": "^1.5.0" },
@@ -57,6 +57,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Set maple output format is pretty or not"
+                },
+                "maple.echo": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "trur for output with echo the command"
                 }
             }
         }

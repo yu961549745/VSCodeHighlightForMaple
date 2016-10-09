@@ -64,6 +64,11 @@ Example for `false`
 > solve(x^2+x-1);
 1/2*5^(1/2)-1/2, -1/2-1/2*5^(1/2)
 ```
+And you can close the command ehco with set
+```
+"maple.echo":false
+```
+
 To run maple code, you can right click and select the `Maple Runner` menu. Or, you can press `ctrl+shift+alt+m`. 
 While there is any code selected, it will run the selected code instead of run the whole file.
 
@@ -82,6 +87,7 @@ Notice:
 + add code runner.
 
 ### 0.x.x
++ add `maple.echo` option.
 + add syntaxes highlight.
 + add snippets.
 + add theme.

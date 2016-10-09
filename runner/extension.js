@@ -31,8 +31,10 @@ function getSelectedCodeAndRun() {
     var config = vscode.workspace.getConfiguration('maple');
     var cmaplePath = config.get("cmaplePath");
     var printOption = config.get("isPrettyPrint") ? " -c interface(prettyprint=1) " : " -c interface(prettyprint=0) ";
+    var isQuiet = !config.get("echo");
+    var echoOption = config.get("echo") ? "" : " -q ";
     var dirOption = " -c \"currentdir(`" + fpath + "`)\" ";
-    var options = dirOption + printOption;
+    var options = dirOption + printOption + echoOption;
     // check cmaple.exe is exists
     if (!fs.existsSync(cmaplePath)) {
         vscode.window.showInformationMessage('Please set path of cmaple.exe');
@@ -51,8 +53,12 @@ function getSelectedCodeAndRun() {
         outputChannel.appendLine('[Maple Running : ' + fname + ']');
         var output = fs.readFileSync(outFile, "utf8");
         var lines = output.split(/[\r\n]+/g);
-        for (var i = 5; i < lines.length - 3; i++) {
-            if (!lines[i].match(/memory used=.*?MB, alloc=.*?MB, time=.*?/)) {
+        if (isQuiet) {
+            for (var i = 0; i < lines.length; i++) {
+                outputChannel.appendLine(lines[i]);
+            }
+        } else {
+            for (var i = 5; i < lines.length - 3; i++) {
                 outputChannel.appendLine(lines[i]);
             }
         }
