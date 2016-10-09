@@ -79,6 +79,9 @@ Notice:
 
 ## Change Log
 
+### 1.1.2
++ add `maple.echo` option.
+
 ### 1.1.x
 + set the running path of `cmaple` to the folder of selected file.
 + add hint while running maple code.
@@ -87,7 +90,6 @@ Notice:
 + add code runner.
 
 ### 0.x.x
-+ add `maple.echo` option.
 + add syntaxes highlight.
 + add snippets.
 + add theme.
