@@ -48,9 +48,9 @@ function getSelectedCodeAndRun() {
     var outFile = path.join(tmpFilePath, 'out0.mpl'.replace(/\d+/g, rndStr));
     fs.writeFileSync(tmpFile, text, { encoding: "utf8" });
     var process = exec('"' + cmaplePath + '"' + " " + options + '"' + tmpFile + '"' + " >" + '"' + outFile + '"');
+    outputChannel.show();
+    outputChannel.appendLine('[Maple Running : ' + fname + ']');
     process.on('close', function() {
-        outputChannel.show();
-        outputChannel.appendLine('[Maple Running : ' + fname + ']');
         var output = fs.readFileSync(outFile, "utf8");
         var lines = output.split(/[\r\n]+/g);
         if (isQuiet) {
