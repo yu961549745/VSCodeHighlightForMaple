@@ -79,6 +79,9 @@ Notice:
 
 ## Change Log
 
+### 1.1.3
++ show output channel immediately after run code.
+
 ### 1.1.2
 + add `maple.echo` option.
 
