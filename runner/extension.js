@@ -44,8 +44,20 @@ function getSelectedCodeAndRun() {
     fs.writeFileSync(tmpFile, printOption + dirOption + text, { encoding: "utf8" });
     outputChannel.show();
     outputChannel.appendLine('[Maple Running : ' + fname + ']');
-    var p = exec(cmaplePath, ["-q", tmpFile], (error, stdout, stderr) => {
-        outputChannel.appendLine(stdout);
+    var isQuiet = !config.get("echo");
+    var runOption = isQuiet ? ["-q", tmpFile] : [tmpFile];
+    var p = exec(cmaplePath, runOption, (error, stdout, stderr) => {
+        var lines = stdout.split(/[\r\n]+/g);
+        console.log(lines);
+        if (isQuiet) {
+            for (var i = 0; i < lines.length; i++) {
+                outputChannel.appendLine(lines[i]);
+            }
+        } else {
+            for (var i = 7; i < lines.length - 3; i++) {
+                outputChannel.appendLine(lines[i]);
+            }
+        }
     });
     p.on('close', function() {
         fs.unlinkSync(tmpFile);
