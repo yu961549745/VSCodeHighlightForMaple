@@ -13,7 +13,7 @@ exports.deactivate = deactivate;
 
 var fs = require('fs');
 var path = require('path');
-var exec = require('child_process').exec;
+var exec = require('child_process').execFile;
 var outputChannel = vscode.window.createOutputChannel('Maple');
 var tmpFilePath = require('os').tmpdir();
 
@@ -30,39 +30,24 @@ function getSelectedCodeAndRun() {
     // get configs
     var config = vscode.workspace.getConfiguration('maple');
     var cmaplePath = config.get("cmaplePath");
-    var printOption = config.get("isPrettyPrint") ? " -c interface(prettyprint=1) " : " -c interface(prettyprint=0) ";
-    var isQuiet = !config.get("echo");
-    var echoOption = config.get("echo") ? "" : " -q ";
-    var dirOption = " -c \"currentdir(`" + fpath + "`)\" ";
-    var options = dirOption + printOption + echoOption;
     // check cmaple.exe is exists
     if (!fs.existsSync(cmaplePath)) {
-        vscode.window.showInformationMessage('Please set path of cmaple.exe');
+        vscode.window.showInformationMessage('cmaplePath "' + cmaplePath + '" not exists');
         return;
     }
     // run maple codes
     var selection = editor.selection;
     var text = selection.isEmpty ? editor.document.getText() : editor.document.getText(selection);
-    var rndStr = Math.random().toString();
-    var tmpFile = path.join(tmpFilePath, 'tmp0.mpl'.replace(/\d+/g, rndStr));
-    var outFile = path.join(tmpFilePath, 'out0.mpl'.replace(/\d+/g, rndStr));
-    fs.writeFileSync(tmpFile, text, { encoding: "utf8" });
-    var process = exec('"' + cmaplePath + '"' + " " + options + '"' + tmpFile + '"' + " >" + '"' + outFile + '"');
+    var printOption = config.get("isPrettyPrint") ? "interface(prettyprint=1):\n" : "interface(prettyprint=0):\n";
+    var dirOption = "currentdir(`" + fpath + "`):\n";
+    var tmpFile = path.join(tmpFilePath, 'tmp0.mpl'.replace(/\d+/g, Math.random().toString()));
+    fs.writeFileSync(tmpFile, printOption + dirOption + text, { encoding: "utf8" });
     outputChannel.show();
     outputChannel.appendLine('[Maple Running : ' + fname + ']');
-    process.on('close', function() {
-        var output = fs.readFileSync(outFile, "utf8");
-        var lines = output.split(/[\r\n]+/g);
-        if (isQuiet) {
-            for (var i = 0; i < lines.length; i++) {
-                outputChannel.appendLine(lines[i]);
-            }
-        } else {
-            for (var i = 5; i < lines.length - 3; i++) {
-                outputChannel.appendLine(lines[i]);
-            }
-        }
+    var p = exec(cmaplePath, ["-q", tmpFile], (error, stdout, stderr) => {
+        outputChannel.appendLine(stdout);
+    });
+    p.on('close', function() {
         fs.unlinkSync(tmpFile);
-        fs.unlinkSync(outFile);
     });
 }
