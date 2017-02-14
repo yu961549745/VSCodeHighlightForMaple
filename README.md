@@ -74,6 +74,8 @@ Notice:
 + not support preprocessor commands.
 
 ## Change Log
+### 1.1.4
++ fix `Dark+ for maple` theme.
 
 ### 1.1.3
 + show output channel immediately after run code.
