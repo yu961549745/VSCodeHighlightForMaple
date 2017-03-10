@@ -1,14 +1,14 @@
 .foo {
-    color: #ff80ff;
+    color: #ff1aff;
     /* modifier */
-    color: #ff8000;
+    color: #dd6f00;
     /* quoted name */
-    color: #d0d00f;
+    color: #b5b50d;
     /* unevaluated expression */
-    color: #aaaaff;
+    color: #5151ff;
     /* language variable and constant */
-    color: #ee5aa5;
+    color: #d61676;
     /* preprocessor */
-    color: #aadddd;
+    color: #276161;
     /* functions */
 }

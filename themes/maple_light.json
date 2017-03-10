@@ -1,0 +1,61 @@
+{
+    "name": "Light+ for maple",
+    "include": "./light_plus.json",
+    "settings": [{
+            "name": "Maple modifiers",
+            "scope": [
+                "storage.modifier.maple"
+            ],
+            "settings": {
+                "foreground": "#ff1aff"
+            }
+        },
+        {
+            "name": "Maple quoted name",
+            "scope": [
+                "string.name.maple"
+            ],
+            "settings": {
+                "foreground": "#dd6f00"
+            }
+        },
+        {
+            "name": "Maple uneval expression",
+            "scope": [
+                "string.unevaled.maple"
+            ],
+            "settings": {
+                "foreground": "#b5b50d"
+            }
+        },
+        {
+            "name": "Maple variables and constants",
+            "scope": [
+                "constant.language.maple",
+                "variable.language.maple",
+                "variable.options.maple"
+            ],
+            "settings": {
+                "foreground": "#5151ff"
+            }
+        },
+        {
+            "name": "Maple preprocessor",
+            "scope": [
+                "keyword.preprocessor.maple"
+            ],
+            "settings": {
+                "foreground": "#d61676"
+            }
+        },
+        {
+            "name": "Maple Functions",
+            "scope": [
+                "support.function.maple"
+            ],
+            "settings": {
+                "foreground": "#276161"
+            }
+        }
+    ]
+}

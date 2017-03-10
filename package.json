@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": { "vscode": "^1.5.0" },
@@ -26,9 +26,13 @@
             "path": "./snippets/maple.json"
         }],
         "themes": [{
-            "label": "Dark+ for maple",
+            "label": "Maple Dark+",
             "uiTheme": "vs-dark",
-            "path": "./themes/maple.json"
+            "path": "./themes/maple_dark.json"
+        }, {
+            "label": "Maple Light+",
+            "uiTheme": "vs",
+            "path": "./themes/maple_light.json"
         }],
         "commands": [{
             "command": "maple.run",
