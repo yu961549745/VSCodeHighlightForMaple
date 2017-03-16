@@ -72,30 +72,3 @@ Notice:
 + it only support codes that can run in `cmaple.exe`.
 + every line should end with `;` or `:`.
 + not support preprocessor commands.
-
-## Change Log
-### 1.1.5
-+ add light theme `Maple Light+`
-+ rename `Dark+ for maple` to `Maple Dark+`
-
-### 1.1.4
-+ fix `Dark+ for maple` theme.
-
-### 1.1.3
-+ show output channel immediately after run code.
-+ support run maple on Linux.
-
-### 1.1.2
-+ add `maple.echo` option.
-
-### 1.1.x
-+ set the running path of `cmaple` to the folder of selected file.
-+ add hint while running maple code.
-
-### 1.0.x
-+ add code runner.
-
-### 0.x.x
-+ add syntaxes highlight.
-+ add snippets.
-+ add theme.

@@ -36,7 +36,7 @@
                 "variable.options.maple"
             ],
             "settings": {
-                "foreground": "#5151ff"
+                "foreground": "#335E11"
             }
         },
         {
@@ -54,7 +54,7 @@
                 "support.function.maple"
             ],
             "settings": {
-                "foreground": "#276161"
+                "foreground": "#8741A3"
             }
         }
     ]
