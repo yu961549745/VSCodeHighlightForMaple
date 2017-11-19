@@ -1,7 +1,12 @@
 # Change Log
+## 1.1.7
++ the menu item of `Maple Runner` is enabled only in the maple environment.
++ change key binding of  `Maple Runner` to `alt+shift+m`.
+
 ## 1.1.6
 + add formal change log
 + change color of `Maple Light+` Theme
+
 ## 1.1.5
 + add light theme `Maple Light+`
 + rename `Dark+ for maple` to `Maple Dark+`

@@ -1,9 +1,11 @@
 {
     "name": "maple",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
-    "engines": { "vscode": "^1.5.0" },
+    "engines": {
+        "vscode": "^1.5.0"
+    },
     "categories": [
         "Languages",
         "Snippets",
@@ -13,7 +15,11 @@
     "contributes": {
         "languages": [{
             "id": "maple",
-            "extensions": [".mpl", ".mi", ".mm"],
+            "extensions": [
+                ".mpl",
+                ".mi",
+                ".mm"
+            ],
             "configuration": "maple.configuration.json"
         }],
         "grammars": [{
@@ -26,24 +32,28 @@
             "path": "./snippets/maple.json"
         }],
         "themes": [{
-            "label": "Maple Dark+",
-            "uiTheme": "vs-dark",
-            "path": "./themes/maple_dark.json"
-        }, {
-            "label": "Maple Light+",
-            "uiTheme": "vs",
-            "path": "./themes/maple_light.json"
-        }],
+                "label": "Maple Dark+",
+                "uiTheme": "vs-dark",
+                "path": "./themes/maple_dark.json"
+            },
+            {
+                "label": "Maple Light+",
+                "uiTheme": "vs",
+                "path": "./themes/maple_light.json"
+            }
+        ],
         "commands": [{
             "command": "maple.run",
             "title": "Maple Runner"
         }],
         "keybindings": [{
             "command": "maple.run",
-            "key": "ctrl+shift+alt+m"
+            "key": "shift+alt+m",
+            "when": "resourceLangId == maple"
         }],
         "menus": {
             "editor/context": [{
+                "when": "resourceLangId == maple",
                 "command": "maple.run",
                 "group": "navigation"
             }]
@@ -71,7 +81,7 @@
         }
     },
     "activationEvents": [
-        "onCommand:maple.run"
+        "onLanguage:maple"
     ],
     "main": "./runner/extension",
     "icon": "img/maple.png",
@@ -86,6 +96,14 @@
     },
     "homepage": "https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/README.md",
     "keywords": [
-        "maple", "highlight", "snippets", "run"
-    ]
+        "maple",
+        "highlight",
+        "snippets",
+        "run"
+    ],
+    "__metadata": {
+        "id": "dcf9c929-efe6-4b30-9b20-0c3795225733",
+        "publisherDisplayName": "余江涛",
+        "publisherId": "477ec89b-cae9-4aed-896f-1a82cc110cfd"
+    }
 }

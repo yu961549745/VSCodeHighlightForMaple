@@ -1,9 +1,14 @@
 'use strict';
-var vscode = require('vscode');
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const exec = require('child_process').execFile;
+const vscode = require('vscode');
+// const proclist = require('./proclist');
 
 function activate(context) {
-    var run = vscode.commands.registerCommand('maple.run', getSelectedCodeAndRun);
-    context.subscriptions.push(run);
+    vscode.commands.registerCommand('maple.run', getSelectedCodeAndRun);
+    // vscode.window.registerTreeDataProvider('maple-porc', proclist.ProcListProvider(context));
 }
 
 exports.activate = activate;
@@ -11,11 +16,8 @@ exports.activate = activate;
 function deactivate() {}
 exports.deactivate = deactivate;
 
-var fs = require('fs');
-var path = require('path');
-var exec = require('child_process').execFile;
 var outputChannel = vscode.window.createOutputChannel('Maple');
-var tmpFilePath = require('os').tmpdir();
+var tmpFilePath = os.tmpdir();
 
 function getSelectedCodeAndRun() {
     // check editor is openning
@@ -48,7 +50,6 @@ function getSelectedCodeAndRun() {
     var runOption = isQuiet ? ["-q", tmpFile] : [tmpFile];
     var p = exec(cmaplePath, runOption, (error, stdout, stderr) => {
         var lines = stdout.split(/[\r\n]+/g);
-        console.log(lines);
         if (isQuiet) {
             for (var i = 0; i < lines.length; i++) {
                 outputChannel.appendLine(lines[i]);
