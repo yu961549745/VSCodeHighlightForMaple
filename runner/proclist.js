@@ -11,6 +11,7 @@ class ProcListProvider {
             this.update();
             this.refrash();
         });
+        this.refrash();
     }
 
     refrash() {

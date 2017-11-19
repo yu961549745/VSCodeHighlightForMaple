@@ -60,9 +60,8 @@
         },
         "views": {
             "explorer": [{
-                "id": "maple-viewer",
-                "name": "Maple Proc/Module",
-                "when": "resourceLangId == maple"
+                "id": "maple-outline",
+                "name": "Maple Proc/Module"
             }]
         },
         "configuration": {
@@ -89,7 +88,7 @@
     },
     "activationEvents": [
         "onLanguage:maple",
-        "onView:maple-proc"
+        "onView:maple-outline"
     ],
     "main": "./runner/extension",
     "icon": "img/maple.png",

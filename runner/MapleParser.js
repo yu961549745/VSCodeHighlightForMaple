@@ -1,3 +1,5 @@
+'use strict';
+
 function findTokens(str) {
     var b, r = /((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*(proc|module))|(end\s+(proc|module)\s*[:;])/g;
     var arr = new Array();
