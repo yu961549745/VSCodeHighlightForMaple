@@ -1,6 +1,9 @@
 # Change Log
+## 1.2.3
++ Eliminate the impact of block comments `(* ... *)` for `Maple Proc/Module` viewer.
+
 ## 1.2.2
-+ Eliminate the impact of comments for `Maple Proc/Module` viewer.
++ Eliminate the impact of line comments for `Maple Proc/Module` viewer.
 
 ## 1.2.1
 + fix bug of `Maple Proc/Module` viewer.

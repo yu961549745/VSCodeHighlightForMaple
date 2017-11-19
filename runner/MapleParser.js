@@ -1,7 +1,7 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /(\(\*.*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/gm;
+    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/gm;
     var arr = new Array();
     var k = 0;
     var procs = 0,
