@@ -4,11 +4,13 @@ const os = require('os');
 const path = require('path');
 const exec = require('child_process').execFile;
 const vscode = require('vscode');
-// const proclist = require('./proclist');
+const proclist = require('./proclist');
 
 function activate(context) {
     vscode.commands.registerCommand('maple.run', getSelectedCodeAndRun);
-    // vscode.window.registerTreeDataProvider('maple-porc', proclist.ProcListProvider(context));
+    var ProcListProvider = new proclist.ProcListProvider(context);
+    vscode.window.registerTreeDataProvider('maple-viewer', ProcListProvider);
+    vscode.commands.registerCommand('extension.selectMaple', range => { ProcListProvider.select(range) });
 }
 
 exports.activate = activate;

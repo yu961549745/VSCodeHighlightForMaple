@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.1.7",
+    "version": "1.2.0",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": {
@@ -58,6 +58,13 @@
                 "group": "navigation"
             }]
         },
+        "views": {
+            "explorer": [{
+                "id": "maple-viewer",
+                "name": "Maple Proc/Module",
+                "when": "resourceLangId == maple"
+            }]
+        },
         "configuration": {
             "type": "object",
             "title": "Maple Runner configuration",
@@ -75,13 +82,14 @@
                 "maple.echo": {
                     "type": "boolean",
                     "default": true,
-                    "description": "trur for output with echo the command"
+                    "description": "true for output with echo the command"
                 }
             }
         }
     },
     "activationEvents": [
-        "onLanguage:maple"
+        "onLanguage:maple",
+        "onView:maple-proc"
     ],
     "main": "./runner/extension",
     "icon": "img/maple.png",

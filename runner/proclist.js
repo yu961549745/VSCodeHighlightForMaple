@@ -1,36 +1,57 @@
 'use strict';
+const vscode = require('vscode');
+const mp = require('./MapleParser');
+
+
 class ProcListProvider {
     constructor(context) {
         this._onDidChangeTreeData = new vscode.EventEmitter();
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
         vscode.window.onDidChangeActiveTextEditor(editor => {
-            this.parseTree();
-            this._onDidChangeTreeData.fire();
+            this.update();
+            this.refrash();
         });
-        vscode.workspace.onDidChangeTextDocument(e => {});
-        this.parseTree();
     }
-    onDocumentChanged(changeEvent) {
-        if (changeEvent.document.uri.toString() === this.editor.document.uri.toString()) {
-            for (const change of changeEvent.contentChanges) {}
-        }
-    }
-    parseTree() {
+
+    refrash() {
         this.tree = null;
         this.editor = vscode.window.activeTextEditor;
-        if (this.editor && this.editor.document && this.editor.document.languageId === 'json') {
-            this.tree = json.parseTree(this.editor.document.getText());
+        if (this.editor && this.editor.document && this.editor.document.languageId === 'maple') {
+            this.tree = mp.buildTree(mp.findTokens(this.editor.document.getText()));
+            // mp.printTree(this.tree, 0);
         }
+        return this.tree;
     }
+
+    update() {
+        this._onDidChangeTreeData.fire();
+    }
+
     getChildren(node) {
+        var ret;
         if (node) {
-            return Promise.resolve(this._getChildren(node));
+            ret = Promise.resolve(node.childs);
         } else {
-            return Promise.resolve(this.tree ? this.tree.children : []);
+            ret = Promise.resolve(this.tree ? this.tree.childs : []);
         }
+        return ret;
     }
-    _getChildren(node) {
-        return node.parent.type === 'array' ? this.toArrayValueNode(node) : (node.type === 'array' ? node.children[0].children : node.children[1].children);
+
+    getTreeItem(node) {
+        var item = new vscode.TreeItem(node.getLable(), node.hasChild() ? vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None);
+        item.command = {
+            command: 'extension.selectMaple',
+            title: '',
+            arguments: [new vscode.Range(this.editor.document.positionAt(node.start), this.editor.document.positionAt(node.end))]
+        };
+        return item;
+    }
+
+    select(range) {
+        var editor = this.editor;
+        var selection = new vscode.Selection(range.start, range.end);
+        editor.selection = selection;
+        editor.revealRange(selection);
     }
 }
 exports.ProcListProvider = ProcListProvider;

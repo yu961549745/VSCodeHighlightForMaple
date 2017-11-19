@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.0
++ add the `Maple Procedure List` viewer 
+
 ## 1.1.7
 + the menu item of `Maple Runner` is enabled only in the maple environment.
 + change key binding of  `Maple Runner` to `alt+shift+m`.
