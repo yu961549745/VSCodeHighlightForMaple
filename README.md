@@ -27,7 +27,8 @@ Support elements include:
 
 Support Maple proc/module outline:
 + support proc/module names like `abc`,``abc`` or `'abc'`.
-+ support proc/module names in the form of `:-name`,`name[name2][name3]`,`name:-name2:-name3`.
++ support proc/module names in the form of `:-name`,`name[anything]`,`name[name2][name3]`,`name:-name2:-name3`.
++ do **NOT** support proc/module names in the form of `name[[...]]`.
 + **MUST** use the grammer of `proc() ... end proc` or `module() ... end module`.
 
 ## Snippets

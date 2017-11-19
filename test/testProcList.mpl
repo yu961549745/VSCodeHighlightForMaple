@@ -16,6 +16,14 @@ A[B]:=proc()
     
 end proc:
 
+A[1]:=proc()
+    
+end proc:
+
+A["fadfa"]:=proc()
+    
+end proc:
+
 :-C[D]:=proc()
 
 

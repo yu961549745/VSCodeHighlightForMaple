@@ -1,7 +1,7 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /("(\\*.|\s)*?")|(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/gm;
+    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)|("(\\*.|\s)*?")/gm;
     var arr = new Array();
     var k = 0;
     var procs = 0,
@@ -13,18 +13,25 @@ function findTokens(str) {
         var start = b.index;
         var end = start + sToken.length;
         var type, name;
-        if (/("(\\*.|\s)*?")|(\(\*(.|\s)*?\*\))|(#.*?$)/gm.test(sToken)) {
+        if (/(\(\*(.|\s)*?\*\))|(#.*?$)/gm.test(sToken)) {
+            // 注释
             continue;
         } else if (/(\bend\s+\b(proc|module)\b\s*[:;]*)/g.test(sToken)) {
+            // 结束标记
             name = undefined;
             type = sToken.replace(/\s+|[:;]/g, '');
         } else if (!/:=/g.test(sToken)) {
+            // 匿名函数
             name = '<null>';
             type = sToken;
-        } else {
+        } else if (/((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)/gm.test(sToken)) {
+            // 非匿名函数
             var nt = sToken.split(/\s*:=\s*/);
             type = nt[1];
             name = nt[0];
+        } else {
+            // 字符串
+            continue;
         }
         arr.push({
             'type': type,

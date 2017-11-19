@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.5
++ allow the name of proc/module in the form of `name["str"]`.
+
 ## 1.2.4
 + Eliminate the impact string for `Maple Proc/Module` viewer.
 + Fix the bug of `Maple Proc/Module` viewer.
