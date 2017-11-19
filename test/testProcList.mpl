@@ -187,5 +187,7 @@ printf("\d \d \" fadfa hahah:=proc()end proc \" \"\"\n");
 printf("hahah:=proc()end proc\n");
 
 fadsfasdf:=proc()
-    
+    return proc()
+        
+    end proc
 end proc:
