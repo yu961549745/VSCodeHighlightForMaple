@@ -1,7 +1,7 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)|("(\\*.|\s)*?")/gm;
+    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\bend\b\s*[;:])|(\b(proc|module)\b)|("(\\*.|\s)*?")/gm;
     var arr = new Array();
     var k = 0;
     var procs = 0,
@@ -16,7 +16,7 @@ function findTokens(str) {
         if (/(\(\*(.|\s)*?\*\))|(#.*?$)/gm.test(sToken)) {
             // 注释
             continue;
-        } else if (/(\bend\s+\b(proc|module)\b\s*[:;]*)/g.test(sToken)) {
+        } else if (/(\bend\s+\b(proc|module)\b\s*[:;]*)|(\bend\b\s*[;:])/g.test(sToken)) {
             // 结束标记
             name = undefined;
             type = sToken.replace(/\s+|[:;]/g, '');
@@ -95,6 +95,13 @@ function buildTree(tokens) {
                     stack.peek().append(node);
                 }
                 stack.push(node);
+                break;
+            case 'end':
+                if (stack.peek().type == 'root') {
+                    return null;
+                }
+                var node = stack.pop();
+                node.end = token.end;
                 break;
             case 'endproc':
                 if (stack.peek().type != 'proc') {

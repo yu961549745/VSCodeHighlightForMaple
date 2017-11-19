@@ -1,4 +1,9 @@
 # Change Log
+## 1.2.6
++ Compatible with older syntax, **MUST** end with `;` or `;`.
+    + `proc() ... end:`
+    + `module() ... end:`
+
 ## 1.2.5
 + allow the name of proc/module in the form of `name["str"]`.
 

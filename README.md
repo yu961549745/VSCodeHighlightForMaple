@@ -30,7 +30,11 @@ Support Maple proc/module outline:
 + support proc/module names in the form of `:-name`,`name[anything]`,`name[name2][name3]`,`name:-name2:-name3`.
 + do **NOT** support proc/module names in the form of `name[[...]]`.
 + **MUST** use the grammer of `proc() ... end proc` or `module() ... end module`.
-
++ Compatible with older syntax, **MUST** end with `;` or `;`.
+    + `proc() ... end:`
+    + `module() ... end:`
+    + do **NOT** use `try ... end`, use `try ... end try` instead.
+    
 ## Snippets
 
 <img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/snippets.gif?raw=true">

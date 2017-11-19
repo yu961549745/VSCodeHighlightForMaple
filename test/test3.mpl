@@ -1,2 +1,8 @@
-currentdir();
-solve(x^2+x-1);
+fadf:=proc()
+    fadsfafadfasd:=module()        
+    end:
+end:
+
+gjhdg:=module()
+
+end:
