@@ -22,14 +22,13 @@ Support elements include:
 + maple functions.
 + support extensions: mpl,mm,mi .
 
-## Maple Outline
+## Proc/Module Outline
 <img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/outline.png?raw=true">
 
 Support Maple proc/module outline:
 + support proc/module names like `abc`,``abc`` or `'abc'`.
-+ support proc/module names in the form of `:-name`,`name[name2][name3]`,`name:-name2:-name3`. 
-+ **do NOT support anonymous proc/module.**
-+ **do NOT end an anonymous proc/module with `:` or `;`.**
++ support proc/module names in the form of `:-name`,`name[name2][name3]`,`name:-name2:-name3`.
++ **MUST** use the grammer of `proc() ... end proc` or `module() ... end module`.
 
 ## Snippets
 
