@@ -183,3 +183,9 @@ end proc:
 # end proc:
 
 
+printf("\d \d \" fadfa hahah:=proc()end proc \" \"\"\n");
+printf("hahah:=proc()end proc\n");
+
+fadsfasdf:=proc()
+    
+end proc:

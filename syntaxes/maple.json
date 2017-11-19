@@ -30,7 +30,7 @@
             "name": "comment.line.maple"
         },
         {
-            "match": "\"(\\\\.|.)*?\"",
+            "match": "\"(\\\\*.)*?\"",
             "name": "string.maple"
         },
         {
