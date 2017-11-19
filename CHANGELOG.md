@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.1
++ fix bug of `Maple Proc/Module` viewer 
+
 ## 1.2.0
 + add the `Maple Proc/Module` viewer 
 

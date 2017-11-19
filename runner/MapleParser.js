@@ -1,7 +1,7 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*(proc|module))|(end\s+(proc|module)\s*[:;]*)|(proc|module)/g;
+    var b, r = /((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/g;
     var arr = new Array();
     var k = 0;
     var procs = 0,
@@ -17,7 +17,7 @@ function findTokens(str) {
             name = undefined;
             type = sToken.replace(/\s+|[:;]/g, '');
         } else if (!/:=/g.test(sToken)) {
-            name = 'null';
+            name = '<null>';
             type = sToken;
         } else {
             var nt = sToken.split(/\s*:=\s*/);
@@ -82,8 +82,7 @@ function buildTree(tokens) {
             case 'proc':
             case 'module':
                 var node = new MapleNode(token.type, token.name, token.start);
-                // 不添加匿名函数
-                if (node.name != 'null') {
+                if (node.name != '<null>') {
                     stack.peek().append(node);
                 }
                 stack.push(node);
@@ -110,6 +109,10 @@ function buildTree(tokens) {
 }
 
 function printTree(node, depth) {
+    if (!node) {
+        console.log(null);
+        return;
+    }
     var pre = '';
     for (var k = 0; k < depth; k++) pre += '  ';
     console.log(pre + node.getLable() + '(' + node.start + ',' + node.end + ')');
