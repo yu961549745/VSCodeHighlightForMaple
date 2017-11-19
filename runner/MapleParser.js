@@ -1,7 +1,7 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/g;
+    var b, r = /(\(\*.*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[\s*(\w+|(`.*?`)|('.*?'))\s*\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+(proc|module)\b\s*[:;]*)|(\b(proc|module)\b)/gm;
     var arr = new Array();
     var k = 0;
     var procs = 0,
@@ -13,7 +13,9 @@ function findTokens(str) {
         var start = b.index;
         var end = start + sToken.length;
         var type, name;
-        if (/end\s+((proc)|(module))\s*[:;]/g.test(sToken)) {
+        if (/(\(\*.*?\*\))|(#.*?$)/gm.test(sToken)) {
+            continue;
+        } else if (/end\s+((proc)|(module))\s*[:;]/g.test(sToken)) {
             name = undefined;
             type = sToken.replace(/\s+|[:;]/g, '');
         } else if (!/:=/g.test(sToken)) {
