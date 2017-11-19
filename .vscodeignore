@@ -3,3 +3,4 @@ img/**
 !img/maple.png
 .vscode/**
 publish.bat
+**/test*.js
