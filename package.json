@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": {
@@ -13,25 +13,32 @@
         "Other"
     ],
     "contributes": {
-        "languages": [{
-            "id": "maple",
-            "extensions": [
-                ".mpl",
-                ".mi",
-                ".mm"
-            ],
-            "configuration": "maple.configuration.json"
-        }],
-        "grammars": [{
-            "language": "maple",
-            "scopeName": "source.maple",
-            "path": "./syntaxes/maple.json"
-        }],
-        "snippets": [{
-            "language": "maple",
-            "path": "./snippets/maple.json"
-        }],
-        "themes": [{
+        "languages": [
+            {
+                "id": "maple",
+                "extensions": [
+                    ".mpl",
+                    ".mi",
+                    ".mm"
+                ],
+                "configuration": "maple.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "maple",
+                "scopeName": "source.maple",
+                "path": "./syntaxes/maple.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "maple",
+                "path": "./snippets/maple.json"
+            }
+        ],
+        "themes": [
+            {
                 "label": "Maple Dark+",
                 "uiTheme": "vs-dark",
                 "path": "./themes/maple_dark.json"
@@ -42,27 +49,35 @@
                 "path": "./themes/maple_light.json"
             }
         ],
-        "commands": [{
-            "command": "maple.run",
-            "title": "Maple Runner"
-        }],
-        "keybindings": [{
-            "command": "maple.run",
-            "key": "shift+alt+m",
-            "when": "resourceLangId == maple"
-        }],
-        "menus": {
-            "editor/context": [{
-                "when": "resourceLangId == maple",
+        "commands": [
+            {
                 "command": "maple.run",
-                "group": "navigation"
-            }]
+                "title": "Maple Runner"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "maple.run",
+                "key": "shift+alt+m",
+                "when": "resourceLangId == maple"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == maple",
+                    "command": "maple.run",
+                    "group": "navigation"
+                }
+            ]
         },
         "views": {
-            "explorer": [{
-                "id": "maple-outline",
-                "name": "Maple Proc/Module"
-            }]
+            "explorer": [
+                {
+                    "id": "maple-outline",
+                    "name": "Maple Proc/Module"
+                }
+            ]
         },
         "configuration": {
             "type": "object",
