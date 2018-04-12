@@ -19,7 +19,6 @@ class ProcListProvider {
         this.editor = vscode.window.activeTextEditor;
         if (this.editor && this.editor.document && this.editor.document.languageId === 'maple') {
             this.tree = mp.buildTree(mp.findTokens(this.editor.document.getText()));
-            // mp.printTree(this.tree, 0);
         }
         return this.tree;
     }

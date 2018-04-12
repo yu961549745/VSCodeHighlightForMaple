@@ -1,7 +1,28 @@
 'use strict';
 
 function findTokens(str) {
-    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\bend\b\s*[;:])|(\b(proc|module)\b)|("(\\*.|\s)*?")/gm;
+    // /*
+    //     考虑一种分别检测不同类型的 Token 的方法, 防止同时检测造成正则表达式过于复杂的问题. 
+    //     检测到之后再根据起始位置排序
+    // */
+    // var regexs = {
+    //     // 不考虑嵌套
+    //     "comments": /(\(\*(.|\s)*?\*\))|(#.*?$)/gm,
+    //     // 考虑了 "...\"..." 的情况
+    //     "string": /"(\\.|\s|.)*?"/gm,
+    //     /*  
+    //         结束标志允许  end proc/module 
+    //         同时兼容老版本  proc/module ... end: 的写法
+    //         但是不要使用 if/try/do ... end
+    //     */
+    //     "end_tokens": /(\bend\s+\b(proc|module)\b\s*[:;]*)|(\bend\b\s*[;:])/g,
+    //     /*  变量名考虑 xxx `xxx` 'xxx' 三种形式
+    //         考虑 [xxx] :-xxx 的后缀形式
+    //         最后接 proc/module
+    //     */
+    //     "start_tokens": /((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)/gm,
+    // }
+    var b, r = /(\(\*(.|\s)*?\*\))|(#.*?$)|((:-)*(\w+|(`.*?`)|('.*?'))(:-(\w+|(`.*?`)|('.*?')))*(\[.*?\])*\s*:=\s*\b(proc|module)\b)|(\bend\s+\b(proc|module)\b\s*[:;]*)|(\bend\b\s*[;:])|(\b(proc|module)\b)|("(\\.|\s|.)*?")/gm;
     var arr = new Array();
     var k = 0;
     var procs = 0,

@@ -15,4 +15,3 @@ fun:=proc(x::uneval)    # parameter modifier
     print(procname);    # language variable
     return true;        # language constants
 end proc:
-

@@ -34,7 +34,7 @@ Support Maple proc/module outline:
     + `proc() ... end:`
     + `module() ... end:`
     + do **NOT** use `try ... end`, use `try ... end try` instead.
-    
+    + do **NOT** use `if ... end` or `do ... end`
 ## Snippets
 
 <img src="https://github.com/yu961549745/VSCodeHighlightForMaple/blob/master/img/snippets.gif?raw=true">

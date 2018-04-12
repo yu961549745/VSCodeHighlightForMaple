@@ -1,10 +1,13 @@
 {
     "scopeName": "source.maple",
     "fileTypes": [
-        "mpl", "mi", "mm"
+        "mpl",
+        "mi",
+        "mm"
     ],
     "name": "maple",
-    "patterns": [{
+    "patterns": [
+        {
             "match": "@|\\b(od|fi|for|from|by|to|in|while|do|end|proc|local|global|options*|description|return|if|then|else|elif|try|catch|finally|module|export|use|uses|break|next|error|assuming|read|save|quit|done|stop|union|minus|intersect|subset|and|or|not|xor|mod|implies)\\b",
             "name": "keyword.maple"
         },
@@ -30,7 +33,7 @@
             "name": "comment.line.maple"
         },
         {
-            "match": "\"(\\\\*.)*?\"",
+            "match": "\"(\\\\.|.|\\s)*?\"",
             "name": "string.maple"
         },
         {

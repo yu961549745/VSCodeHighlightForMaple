@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.7 
++ fix the bug caused by wrong regex of strings.
+
 ## 1.2.6
 + Compatible with older syntax, **MUST** end with `;` or `;`.
     + `proc() ... end:`
