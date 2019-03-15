@@ -1,85 +1,85 @@
 {
- 	"if":{
-        "prefix":"if",
-        "body":[
+    "if": {
+        "prefix": "if",
+        "body": [
             "if ${1} then",
             "\t${2}",
             "end if;"
         ],
-        "description":"if  then  end if"
+        "description": "if  then  end if"
     },
-	"elif":{
-		"prefix": "elif",
-		"body": [
-			"elif ${1} then",
-			"\t${2}"
-		],
-		"description": "elif  then"
-	},
-    "else":{
-        "prefix":"else",
-        "body":[
+    "elif": {
+        "prefix": "elif",
+        "body": [
+            "elif ${1} then",
+            "\t${2}"
+        ],
+        "description": "elif  then"
+    },
+    "else": {
+        "prefix": "else",
+        "body": [
             "else",
             "\t${1}"
         ],
-        "description":"else"
+        "description": "else"
     },
-    "proc":{
-        "prefix":"proc",
-        "body":[
+    "proc": {
+        "prefix": "proc",
+        "body": [
             "proc($1)",
             "\t$2",
             "end proc:"
         ],
-        "description":"proc end proc"
+        "description": "proc end proc"
     },
-    "module":{
-        "prefix":"module",
-        "body":[
+    "module": {
+        "prefix": "module",
+        "body": [
             "module()",
             "\toption $1;",
             "\t$2",
             "end module:"
         ],
-        "description":"module option end module"
+        "description": "module option end module"
     },
-    "for":{
-        "prefix":"for",
+    "for": {
+        "prefix": "for",
         "body": [
-			"for $1 do",
-			"\t$2",
-			"end do;"
-		],
-		"description": "for do end do"
+            "for $1 do",
+            "\t$2",
+            "end do;"
+        ],
+        "description": "for do end do"
     },
-	"while":{
-		"prefix": "while",
-		"body": [
-			"while $1 do",
-			"\t$2",
-			"end do;"
-		],
-		"description": "while do end do"
-	},
-	"do":{
-		"prefix": "do",
-		"body": [
-			"do",
-			"\t$1",
-			"end do;"
-		],
-		"description": "do end do"
-	},
-    "use":{
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while $1 do",
+            "\t$2",
+            "end do;"
+        ],
+        "description": "while do end do"
+    },
+    "do": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "\t$1",
+            "end do;"
+        ],
+        "description": "do end do"
+    },
+    "use": {
         "prefix": "use",
         "body": [
             "use $1 in",
             "\t$2",
             "end use;"
         ],
-        "description":"use in end use"
+        "description": "use in end use"
     },
-    "try":{
+    "try": {
         "prefix": "try",
         "body": [
             "try",
@@ -92,14 +92,14 @@
         ],
         "description": "try catch finally end try"
     },
-    "define":{
-        "prefix":"$ifndef",
-        "body":[
-            "$ifndef $1",
-            "$define $1",
+    "define": {
+        "prefix": "\\$ifndef",
+        "body": [
+            "\\$ifndef $1",
+            "\\$define $1",
             "$2",
-            "$endif"
+            "\\$endif"
         ],
-        "description":"ifndef - define - endif"
+        "description": "ifndef - define - endif"
     }
 }

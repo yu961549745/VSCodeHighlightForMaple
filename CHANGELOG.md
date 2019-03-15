@@ -1,4 +1,8 @@
 # Change Log
+## 1.2.8 
++ update the built-in theme files of vscode
++ fix the snippets of `$ifdef`
+
 ## 1.2.7 
 + fix the bug caused by wrong regex of strings.
 
